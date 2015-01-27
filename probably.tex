@@ -1,0 +1,48 @@
+\documentclass[russian, twoside, 12pt, a5paper]{article}
+\usepackage[a5paper]{geometry}
+
+\sloppy %грубая борьба с переполнениями
+
+\usepackage{cmap}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\frenchspacing
+
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\definecolor{linkcolor}{HTML}{799B03} % цвет ссылок
+\definecolor{urlcolor}{HTML}{799B03} % цвет гиперссылок
+\hypersetup{linkcolor=linkcolor,urlcolor=urlcolor,colorlinks=true}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\usepackage{euscript} %рукописный шрифт
+
+\renewcommand{\contentsname}{Содержание}
+
+\begin{document}
+
+\title{Ответы на вопросы по курсу «Теория Вероятностей»
+	\thanks{Лектор: Жуковский Максим Евгеньевич\endgraf
+	       	Место: ФИВТ МФТИ}
+}
+
+\author{Колодзей Дарья, 394
+	\thanks{
+		Спасибо Алексею Журавлёву за конспекты и билеты\endgraf
+		Спасибо Павлу Ахтямову за конспекты\endgraf
+		Спасибо Дмитрию Иващенко за печатные конпекты
+		}}
+
+\date{осенний семестр 2014}
+
+\maketitle
+\tableofcontents
+
+\input{ans01}
+\input{ans02}
+
+\end{document}
