@@ -3,6 +3,7 @@
 
 \sloppy %грубая борьба с переполнениями
 
+%usual magic
 \usepackage{cmap}
 \usepackage[utf8]{inputenc}
 \usepackage[T2A]{fontenc}
@@ -15,13 +16,26 @@
 \definecolor{urlcolor}{HTML}{799B03} % цвет гиперссылок
 \hypersetup{linkcolor=linkcolor,urlcolor=urlcolor,colorlinks=true}
 
-\usepackage{amsmath}
+
+%шрифты
 \usepackage{amssymb}
+
+%стили теорем и определений
 \usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}
 
-\usepackage{euscript} %рукописный шрифт
-
+%en to ru
 \renewcommand{\contentsname}{Содержание}
+
+%команды для ускорения письма
+\newcommand{\PP}{\ensuremath{\mathbf{P}}}
+\newcommand{\Alg}{\ensuremath{\mathcal{A}}}
+\newcommand{\Flg}{\ensuremath{\mathcal{F}}}
+\newcommand{\RR}{\ensuremath{\mathbb{R}}}
+\newcommand{\oO}{\ensuremath{\Omega}}
+\newcommand{\PSP}{\ensuremath{\langle \Omega, \mathcal F, \mathbf P \rangle}}
+\newcommand{\gm}{\ensuremath{\sigma}-}
 
 \begin{document}
 

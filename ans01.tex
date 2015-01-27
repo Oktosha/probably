@@ -1,1 +1,76 @@
-\section{Вероятностное пространство ($\Omega$, $\EuScript F$, $P$). Аксиомы Колмогорова.}
+\section{Вероятностное пространство ($\oO$, $\Flg$, $\PP$). Аксиомы Колмогорова.}
+
+Чтобы дать определение {\it вероятностному пространству}, нам понадобится несколько вспомогательных определений.
+
+\begin{definition}[Алгебра]
+	Пусть $\oO$ --- произвольное множество. Система его подмножеств $\Alg \subset 2^{\oO}$ называется {\it алгеброй}, если выполнены условия:
+	\begin{enumerate}
+		\item $\oO \in \Alg$
+		\item Если $A, B$ --- пара множеств, принадлежащих $\Alg$, то
+			$$A \cup B \in \Alg, A \cap B \in \Alg$$
+		\item $A \in \Alg \Rightarrow \overline{A} \in \Alg$
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}[\gmалгебра]
+	Пусть $\oO$ --- произвольное множество. Система его подмножеств $\Flg \subset 2^{\oO}$ называется {\it \gmалгеброй}, если выполнены условия:
+	\begin{enumerate}
+		\item $\oO \in \Flg$
+		\item Если $\{A_i\}$ --- последовательность множеств, принадлежащих $\Flg$, то 
+			$$\bigcup_{i=1}^{\infty} A_i \in \Flg, \bigcap_{i=1}^{\infty} A_i \in \Flg$$
+		\item $A \in \Flg \Rightarrow \overline{A} \in \Flg$
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}[Измеримое пространство]
+Измеримым пространством называют пару $\langle \oO, \Alg \rangle$, где $\oO$ --- произвольное множество, а $\Alg$ --- алгебра его подмножеств.
+\end{definition}
+
+\begin{definition}[Конечно-аддитивная мера]
+	Пусть $\langle \oO, \Alg \rangle$ --- измеримое пространство. Функцию $\PP : \Alg \rightarrow \RR$ называют {\it конечно-аддитивной мерой} данного пространства, если выполнены свойства:
+	\begin{enumerate}
+		\item $\forall A \in \Alg \ \PP(A) \ge 0$
+		\item $A, B \in \Alg, A \cap B = \varnothing \Rightarrow \PP(A \cup B) = \PP(A) + \PP(B)$
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}[Конечно-аддитивная конечная мера]
+	Пусть $\langle \oO, \Alg \rangle$ --- измеримое пространство. Функцию $\PP : \Alg \rightarrow \RR$ называют {\it конечно-аддитивной конечной мерой} данного пространства, если она является конечно-аддитивной мерой данного пространства и $\PP (\oO) < \infty$.
+\end{definition}
+
+\begin{definition}[Конечно-аддитивная вероятностная мера]
+	Пусть $\langle \oO, \Alg \rangle$ --- измеримое пространство. Функцию $\PP : \Alg \rightarrow \RR$ называют {\it конечно-аддитивной вероятностной мерой} данного пространства, если она является конечно-аддитивной мерой данного пространства и $\PP (\oO) = 1$.
+\end{definition}
+
+\begin{definition}[Счётно-аддитивная вероятностная мера]
+	Пусть $\langle \oO, \Alg \rangle$ --- измеримое пространство. Функцию $\PP : \Alg \rightarrow \RR$ называют {\it счётно-аддитивной вероятностной мерой} данного пространства, если выполнены свойства:
+	\begin{enumerate}
+		\item $\forall A \in \Alg \ \PP(A) \ge 0$
+		\item $\PP (\oO) = 1$
+		\item Пусть $\{A_i\}$ --- последовательность попарно-неперсекающихся множеств, принадлежащих $\Alg$. Пусть их объединение также лежит в $\Alg$. Тогда верно
+		$$\PP (\bigcup_{i=1}^{\infty}A_i) = \sum_{i=1}^{\infty}P(A_i)$$
+	\end{enumerate}
+Счётно-аддитивную вероятностную меру над $\langle \oO, \Alg \rangle$ также называют {\it вероятностью} над $\langle \oO, \Alg \rangle$.
+\end{definition}
+
+\begin{definition}[Вероятностное пространство в широком смысле]
+	Тройку $\langle \oO, \Alg, \PP \rangle$, где
+	\begin{itemize}
+		\item $\oO$ --- произвольное множество
+		\item $\Alg$ --- алгебра над $\oO$
+		\item $\PP$ --- вероятность над $\langle \oO, \Alg \rangle$
+	\end{itemize}
+	называют {\it вероятностным пространством в широком смысле}. Элементы $\Alg$ называют {\it событиями}. Событие \oO~называют {\it достоверным} событием, событие $\varnothing$ называют {\it невозможным} событием.
+\end{definition}
+
+\begin{definition}[Вероятностное пространство]
+	Тройку $\langle \oO, \Alg, \PP \rangle$, где
+	\begin{itemize}
+		\item $\oO$ --- произвольное множество
+		\item $\Alg$ --- \gm алгебра над $\oO$
+		\item $\PP$ --- вероятность над $\langle \oO, \Alg \rangle$
+	\end{itemize}
+	называют {\it вероятностным пространством}.
+\end{definition}
+
+Аксиомы Колмогорова --- это аксиомы, которым должно удовлетворять вероятностное пространство. В нашем случае аксиомы Колмогорова зашиты внутрь определения вероятностного пространства.
