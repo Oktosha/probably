@@ -4,14 +4,63 @@
 	Пусть $\langle \oO, \Alg \rangle$ --- измеримое пространство (\oO~---множество, \Alg~---алгебра, но не \gm алгебра). Пусть \PP~--- конечно-аддитивная вероятностная мера на $\langle \oO, \Alg \rangle$. Тогда следующие утверждения равносильны:
 	\begin{itemize}
 		\item \PP~счётно-аддитивная вероятностная мера
+			$$\PP (\bigcup_{i=1}^{\infty}A_i) = \sum_{i=1}^{\infty}P(A_i)$$
+			где $\{A_i\}$ --- последовательность попарно непересекающихся множеств, чьё объединение лежит в \Alg.
 		\item \PP~непрерывна сверху
-			$$lim_{i\rightarrow\infty}\PP(A_i)=\PP(\bigcup_{i=1}^\infty A_i$$
+			$$\lim_{i\rightarrow\infty}\PP(A_i)=\PP(\bigcup_{i=1}^\infty A_i)$$
 			где $\{A_i\}$ --- «неубывающая» последовательность вложенных множеств ($A_i \subset A_{i+1}$), чьё объединение лежит в \Alg.
 		\item \PP~непрерывна снизу
-			$$lim_{i\rightarrow\infty}\PP(A_i)=\PP(\bigcap_{i=1}^\infty A_i$$
+			$$\lim_{i\rightarrow\infty}\PP(A_i)=\PP(\bigcap_{i=1}^\infty A_i)$$
 			где $\{A_i\}$ --- «невозрастающая» последовательность вложенных множеств ($A_i \supset A_{i+1}$), чьё пересечение лежит в \Alg.
 		\item \PP~непрерывна в нуле
-			$$lim_{i\rightarrow\infty}\PP(A_i)=0$$
+			$$\lim_{i\rightarrow\infty}\PP(A_i)=0$$
 			где $\{A_i\}$ --- «невозрастающая» последовательность вложенных множеств ($A_i \supset A_{i+1}$), чьё пересечение является пустым множеством.
 	\end{itemize}
 \end{theorem}
+
+Эту теорему можно найти в Ширяеве с. 147. %сделать список литературы
+Ниже конспект доказательства.
+\begin{proof}
+$1\Rightarrow 2$ Пусть $\{A_i\}$ --- «неубывающая» последовательность вложенных множеств ($A_i \subset A_{i+1}$), чьё объединение лежит в \Alg. Покажем, что
+
+$$\lim_{i\rightarrow\infty}\PP(A_i)=\PP(\bigcup_{i=1}^\infty A_i)$$
+
+Действительно, 
+
+$$\bigcup_{i=1}^\infty A_i = A_1 \sqcup (A_2\setminus A_1) \sqcup (A_3\setminus A_3) \ldots$$
+
+значит
+\begin{multline}
+	\PP(\bigcup_{i=1}^\infty A_i)=\\
+	=\PP(A_1) + \sum_{i=1}^\infty \PP(A_{i+1}\setminus A_i)=\\
+	=\PP(A_1) + \sum_{i=1}^\infty\left(\PP(A_{i+1}) - \PP(A_i)\right) = \\
+	=\lim_{i\rightarrow\infty}\PP(A_i)
+\end{multline}
+
+$2 \Rightarrow 3$ 
+
+Посмотрим на последовательность $\{A_1\setminus A_i\}$. Она удовлетворяет условиям из (2), а значит
+$$\lim_{i\rightarrow\infty}\PP(A_1\setminus A_i) = \PP(\bigcup_{i=1}^\infty A_1\setminus A_i)$$
+Тогда
+\begin{multline}
+\lim_{i\rightarrow\infty}\PP(A_i) =\\
+= \PP(A_1) - \lim_{i\rightarrow\infty}\PP(A_1\setminus A_i) =\\
+= \PP(A_1) - \PP(\bigcup_{i=1}^\infty A_1\setminus A_i) = \\
+= \PP(A_1) - \PP(A_1\setminus \bigcap_{i=1}^\infty A_i) = \\
+= \PP(\bigcap_{i=1}^\infty A_i)
+\end{multline}
+
+$3 \Rightarrow 4$. Кэп.
+
+$4 \Rightarrow 1$. Пусть $\{A_i\}$ --- последовательность попарно непересекающихся событий, чьё объединение $A$ лежит в \Alg.
+
+\begin{multline}
+\sum_{i=1}^\infty\PP(A_i) = \lim_{n\rightarrow\infty}(\sum_{i = 1}^n\PP(A_i)) = \\
+= \lim_{n\rightarrow\infty}(\PP(\bigcup_{i=1}^n A_i)) 
+=  \lim_{n\rightarrow\infty}(\PP(\bigcup_{i = 1}^\infty A_i)-\PP(\bigcup_{i = n + 1}^\infty A_i)) =\\
+= \PP(\bigcup_{i = 1}^\infty A_i) - \lim_{n\rightarrow\infty}\PP(\bigcup_{i = n + 1}^\infty A_i)) = \PP(\bigcup_{i = 1}^\infty A_i)
+\end{multline} 
+
+Поскольку последовательность $\{(\bigcup_{i = n + 1}^\infty A_i)_n\}$ является «невозрастающей» последовательностью множеств, чьё пересечение пусто, а значит $\lim_{n\rightarrow\infty}\PP(\bigcup_{i = n + 1}^\infty A_i)) = 0$.
+
+\end{proof}
