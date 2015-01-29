@@ -16,18 +16,25 @@
 \definecolor{urlcolor}{HTML}{799B03} % цвет гиперссылок
 \hypersetup{linkcolor=linkcolor,urlcolor=urlcolor,colorlinks=true}
 
+%многострочные формулы и другое
+\usepackage{amsmath}
 
 %шрифты
 \usepackage{amssymb}
 
 %стили теорем и определений
 \usepackage{amsthm}
+\theoremstyle{theorem}
+\newtheorem{statement}{Утверждение}
+\newtheorem{theorem}{Теорема}
+
 \theoremstyle{definition}
 \newtheorem{definition}{Определение}
 \newtheorem{example}{Пример}
 
 %en to ru
 \renewcommand{\contentsname}{Содержание}
+\renewcommand{\proofname}{Доказательство}
 
 %команды для ускорения письма
 \newcommand{\PP}{\ensuremath{\mathbf{P}}}
@@ -59,5 +66,6 @@
 
 \input{ans01}
 \input{ans02}
+\input{ans03}
 
 \end{document}
